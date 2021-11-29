@@ -13,10 +13,4 @@ class PlayersController < ApplicationController
         player = Player.find_by(id: params[:id])
         player.destroy
     end
-
-    patch '/player:id' do
-        player = Player.find_by(id: params[:id])
-        player.update(name: params[:name])
-        player.to_json
-    end
 end

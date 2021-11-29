@@ -12,4 +12,19 @@ class TeamsController < ApplicationController
             "404 - Team not found"
         end
     end
+
+    post '/teams' do
+        team = Team.create(params)
+        team.to_json
+    end
+
+    delete '/teams/:id' do 
+        team = Team.find_by(id: params[:id])
+        team.destroy
+    end
+
+    put '/teams/:id' do
+        team = Team.find_by(id: params[:id])
+        team.update(name: params[:name])
+    end
 end

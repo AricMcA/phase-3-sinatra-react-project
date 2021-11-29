@@ -15,17 +15,11 @@ ActiveRecord::Schema.define(version: 2021_11_15_163315) do
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "position"
-    t.float "score"
-    t.float "projected_score"
     t.integer "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.integer "wins"
-    t.integer "losses"
-    t.string "opponent"
-    t.float "score"
   end
 
 end
