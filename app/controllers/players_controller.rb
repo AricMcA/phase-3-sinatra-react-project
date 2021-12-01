@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
     get '/players' do
-        players = Player.all
-        players.to_json
+        sortedPlayers = Player.playerList
+        sortedPlayers.to_json
     end
 
     post '/players' do
